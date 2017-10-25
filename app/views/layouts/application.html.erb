@@ -6,6 +6,8 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!-- <script src="https://use.fontawesome.com/1912cc2bfc.js"></script> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -31,7 +33,14 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  <%= yield %>
+
+  <!-- TODO: col-md-6 col-md-offset-3 For ONLY this, because
+       it will affect all the childrens -->
+
+  <div class="container">
+    <%= yield %>
+  </div>
+  
 
 </body>
 </html>
