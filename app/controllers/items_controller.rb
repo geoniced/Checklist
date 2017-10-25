@@ -43,7 +43,11 @@ class ItemsController < ApplicationController
   # TODO: move first line (find) into the before_action method
   def complete
     @item = Item.find(params[:id])
-    @item.update_attribute(:completed_at, Time.now)
+    if @item.try(:completed_at).nil?
+      @item.update_attribute(:completed_at, Time.now)
+    else
+      @item.update_attribute(:completed_at, nil)
+    end
     redirect_to root_path
   end
 
